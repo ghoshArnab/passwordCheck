@@ -1,0 +1,34 @@
+html { font-size: 62.5%; } 
+body { font-size: 1.4rem;font-family: helvetica; }
+
+#pass {
+    margin:auto 35%;
+    height: 45px;
+    width: 30%;
+    border-radius: 5px;
+    border: 1px solid grey;
+    padding: 10px;
+    font-size: 1.4rem;
+}
+
+#strength_wrap {
+    border: 1px solid grey;
+	margin: 20px auto;
+    width: 20%;
+    height: 45px;
+    border-radius: 5px;
+}
+
+#strength {
+    width: 0px;
+    height: 45px;
+    border-radius:5px;
+}
+
+#password {
+    font-size: 1.2rem;
+    text-align: center;
+    color: grey;
+    height: 45px;
+    line-height: 45px;
+}

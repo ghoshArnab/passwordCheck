@@ -1,126 +1,20 @@
-
 <html>
+
 <head>
-<link rel="stylesheet" type="text/css" href="includes/big_display_style.css">
-<link rel="stylesheet" type="text/css" href="includes/small_display_style.css">
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-  $("#pass").keyup(function(){
-    check_pass();
-  });
-});
-
-function check_pass()
-{
-var val=document.getElementById("pass").value;
-var meter=document.getElementById("meter");
-var no=0;
-if(val!="")
-{
-
-if(val.length<=6)no=1;
-
-if(val.length>6 && (val.match(/[a-z]/) || val.match(/\d+/) || val.match(/.[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/)))no=2;
-
-if(val.length>6 && ((val.match(/[a-z]/) && val.match(/\d+/)) || (val.match(/\d+/) && val.match(/.[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/)) || (val.match(/[a-z]/) && val.match(/.[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/))))no=3;
-
-if(val.length>6 && val.match(/[a-z]/) && val.match(/\d+/) && val.match(/.[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/))no=4;
-
-if(no==1)
-{
-$("#meter").animate({width:'50px'},300);
-meter.style.backgroundColor="red";
-document.getElementById("pass_type").innerHTML="Very Weak";
-}
-
-if(no==2)
-{
-$("#meter").animate({width:'100px'},300);
-meter.style.backgroundColor="#F5BCA9";
-document.getElementById("pass_type").innerHTML="Weak";
-}
-
-if(no==3)
-{
-$("#meter").animate({width:'150px'},300);
-meter.style.backgroundColor="#FF8000";
-document.getElementById("pass_type").innerHTML="Good";
-}
-
-if(no==4)
-{
-$("#meter").animate({width:'200px'},300);
-meter.style.backgroundColor="#00FF40";
-document.getElementById("pass_type").innerHTML="Strong";
-}
-}
-else
-{
-meter.style.backgroundColor="white";
-document.getElementById("pass_type").innerHTML="";
-}
-}
-</script>
-
-<style>
-body
-{
-font-family:helvetica;
-}
-#heading
-{
-margin-top:150px;
-text-align:center;
-font-size:27px;
-color:#2E2EFE;
-}
-#pass
-{
-margin-left:25%;
-height:45px;
-width:500px;
-border-radius:3px;
-border:1px solid grey;
-padding:10px;
-font-size:18px;
-}
-#meter_wrapper
-{
-border:1px solid grey;
-margin-left:38%;
-margin-top:20px;
-width:200px;
-height:35px;
-border-radius:3px;
-}
-#meter
-{
-width:0px;
-height:35px;
-border-radius:
-}
-#pass_type
-{
-font-size:20px;
-margin-top:20px;
-margin-left:45%;
-text-align:center;
-color:grey;
-}
-</style>
+    <link rel="stylesheet" href="Style/main.css">
 </head>
 
 <body>
-<p id="heading">Password Strength Checker Using jQuery and CSS</p>
-<input type="password" id="pass" placeholder="Enter Your Password">
-<div id="meter_wrapper">
-<div id="meter">
-</div>
-</div>
-<br>
-<span id="pass_type"></span>
-
-
+    
+    <input type="password" name="pass" id="pass" placeholder="Enter Password">
+    <div id="strength_wrap">
+        <div id="strength">
+            <div id="password"></div>
+        </div>
+    </div>
+    
 </body>
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="Js/app.js"></script>
+
 </html>
